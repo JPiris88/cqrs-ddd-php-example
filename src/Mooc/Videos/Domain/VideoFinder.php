@@ -22,6 +22,13 @@ final class VideoFinder
         return $video;
     }
 
+    public function searchLast(): ?Video
+    {
+        $video = $this->repository->searchLast();
+
+        return $video;
+    }
+
     private function ensureVideoExists(VideoId $id, Video $video = null): void
     {
         if (null === $video) {

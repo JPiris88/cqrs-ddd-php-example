@@ -10,6 +10,7 @@ use CodelyTv\Mooc\Videos\Domain\VideoId;
 use CodelyTv\Mooc\Videos\Domain\VideoTitle;
 use CodelyTv\Mooc\Videos\Domain\VideoType;
 use CodelyTv\Shared\Domain\Bus\Command\CommandHandler;
+use DateTimeImmutable;
 
 final class CreateVideoCommandHandler implements CommandHandler
 {
@@ -27,7 +28,8 @@ final class CreateVideoCommandHandler implements CommandHandler
         $title    = new VideoTitle($command->title());
         $url      = new VideoUrl($command->url());
         $courseId = new CourseId($command->courseId());
+        $createdOn = $command->createdOn();
 
-        $this->creator->create($id, $type, $title, $url, $courseId);
+        $this->creator->create($id, $type, $title, $url, $courseId, $createdOn);
     }
 }

@@ -9,6 +9,7 @@ use CodelyTv\Shared\Domain\ValueObject\Uuid;
 use CodelyTv\Shared\Infrastructure\Api\Controller\ApiController;
 use CodelyTv\Shared\Infrastructure\Api\Response\ApiHttpCreatedResponse;
 use Symfony\Component\HttpFoundation\Request;
+use DateTimeImmutable;
 
 final class VideoPostController extends ApiController
 {
@@ -25,7 +26,8 @@ final class VideoPostController extends ApiController
             $request->get('type'),
             $request->get('title'),
             $request->get('url'),
-            $request->get('course_id')
+            $request->get('course_id'),
+            new DateTimeImmutable($request->get('created_on'))
         );
 
         $this->dispatch($command);

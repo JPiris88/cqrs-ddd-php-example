@@ -13,14 +13,16 @@ final class VideoResponse implements Response
     private $title;
     private $url;
     private $courseId;
+    private $createdOn;
 
-    public function __construct(string $id, string $type, string $title, string $url, string $courseId)
+    public function __construct(string $id, string $type, string $title, string $url, string $courseId, string $createdOn)
     {
         $this->id       = $id;
         $this->type     = $type;
         $this->title    = $title;
         $this->url      = $url;
         $this->courseId = $courseId;
+        $this->createdOn = $createdOn;
     }
 
     public function id(): string
@@ -46,5 +48,10 @@ final class VideoResponse implements Response
     public function courseId(): string
     {
         return $this->courseId;
+    }
+
+    public function createdOn(): string
+    {
+        return $this->createdOn;
     }
 }

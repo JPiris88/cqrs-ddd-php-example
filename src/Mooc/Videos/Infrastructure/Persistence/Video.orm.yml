@@ -12,6 +12,9 @@ CodelyTv\Mooc\Videos\Domain\Video:
     courseId:
       type: course_id
       column: course_id
+    createdOn:
+      type: datetime_immutable
+      column: created_on
 
   embedded:
     type:

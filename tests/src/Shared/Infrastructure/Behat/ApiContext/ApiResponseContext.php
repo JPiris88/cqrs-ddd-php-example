@@ -68,9 +68,11 @@ final class ApiResponseContext extends RawMinkContext
      */
     public function theResponseShouldBeEmpty(): void
     {
+        $actual = $this->getSessionResponseHelper()->getResponse();
+
         Assert::assertEmpty(
-            $this->getSessionResponseHelper()->getResponse(),
-            'The response of the current page is not empty'
+            $actual,
+            'The response of the current page is not empty, it is '.$actual
         );
     }
 

@@ -16,7 +16,9 @@ use CodelyTv\Test\Mooc\Shared\Domain\Videos\VideoUrlMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoIdMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoTitleMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoTypeMother;
+use CodelyTv\Test\Mooc\Videos\Domain\VideoCreatedOnMother;
 use CodelyTv\Test\Shared\Domain\UuidMother;
+use DateTimeImmutable;
 
 final class CreateVideoCommandMother
 {
@@ -26,7 +28,8 @@ final class CreateVideoCommandMother
         VideoType $type,
         VideoTitle $title,
         VideoUrl $url,
-        CourseId $courseId
+        CourseId $courseId,
+        DateTimeImmutable $createdOn
     ): CreateVideoCommand {
         return new CreateVideoCommand(
             $requestId,
@@ -34,7 +37,8 @@ final class CreateVideoCommandMother
             $type->value(),
             $title->value(),
             $url->value(),
-            $courseId->value()
+            $courseId->value(),
+            $createdOn
         );
     }
 
@@ -46,7 +50,8 @@ final class CreateVideoCommandMother
             VideoTypeMother::random(),
             VideoTitleMother::random(),
             VideoUrlMother::random(),
-            CourseIdMother::random()
+            CourseIdMother::random(),
+            VideoCreatedOnMother::random()
         );
     }
 }

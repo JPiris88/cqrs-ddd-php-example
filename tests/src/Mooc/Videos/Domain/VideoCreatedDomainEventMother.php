@@ -12,6 +12,8 @@ use CodelyTv\Mooc\Videos\Domain\VideoTitle;
 use CodelyTv\Mooc\Videos\Domain\VideoType;
 use CodelyTv\Test\Mooc\Shared\Domain\Courses\CourseIdMother;
 use CodelyTv\Test\Mooc\Shared\Domain\Videos\VideoUrlMother;
+use CodelyTv\Test\Mooc\Shared\Domain\Videos\VideoCreatedOnMother;
+use DateTimeImmutable;
 
 final class VideoCreatedDomainEventMother
 {
@@ -20,7 +22,8 @@ final class VideoCreatedDomainEventMother
         VideoType $type,
         VideoTitle $title,
         VideoUrl $url,
-        CourseId $courseId
+        CourseId $courseId,
+        DateTimeImmutable $createdOn
     ): VideoCreatedDomainEvent {
         return new VideoCreatedDomainEvent(
             $id->value(),
@@ -29,6 +32,7 @@ final class VideoCreatedDomainEventMother
                 'title'    => $title->value(),
                 'url'      => $url->value(),
                 'courseId' => $courseId->value(),
+                'createdOn' => $createdOn->format('Y-m-d H:i:s')
             ]
         );
     }
@@ -40,7 +44,8 @@ final class VideoCreatedDomainEventMother
             VideoTypeMother::random(),
             VideoTitleMother::random(),
             VideoUrlMother::random(),
-            CourseIdMother::random()
+            CourseIdMother::random(),
+            VideoCreatedOnMother::random()
         );
     }
 }

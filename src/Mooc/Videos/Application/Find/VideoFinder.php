@@ -21,4 +21,9 @@ final class VideoFinder
     {
         return $this->finder->__invoke($id);
     }
+
+    public function searchLast()
+    {
+        return $this->finder->searchLast();
+    }
 }

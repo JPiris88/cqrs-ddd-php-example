@@ -26,7 +26,7 @@ final class Course extends AggregateRoot
 
         $course->record(
             new CourseCreatedDomainEvent(
-                $id,
+                $id->value(),
                 [
                     'title'       => $title->value(),
                     'description' => $description->value(),
@@ -50,5 +50,10 @@ final class Course extends AggregateRoot
     public function description(): CourseDescription
     {
         return $this->description;
+    }
+
+    public function updateTitle(CourseTitle $newTitle): void
+    {
+        $this->title = $newTitle;
     }
 }

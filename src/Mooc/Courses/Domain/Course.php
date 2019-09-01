@@ -13,7 +13,7 @@ final class Course extends AggregateRoot
     private $title;
     private $description;
 
-    private function __construct(CourseId $id, CourseTitle $title, CourseDescription $description)
+    public function __construct(CourseId $id, CourseTitle $title, CourseDescription $description)
     {
         $this->id          = $id;
         $this->title       = $title;

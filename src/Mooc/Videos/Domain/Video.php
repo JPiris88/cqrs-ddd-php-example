@@ -57,6 +57,15 @@ final class Video extends AggregateRoot
     public function updateTitle(VideoTitle $newTitle): void
     {
         $this->title = $newTitle;
+
+        $this->record(
+            new VideoTitleUpdatedDomainEvent(
+                $this->id->value(),
+                [
+                    'title'    => $this->title->value()
+                ]
+            )
+        );
     }
 
     public function id(): VideoId

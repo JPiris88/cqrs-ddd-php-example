@@ -4,7 +4,12 @@ declare(strict_types = 1);
 
 namespace CodelyTv\Mooc\Courses\Domain;
 
+use CodelyTv\Mooc\Courses\Domain\Courses;
+use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
+
 interface CourseRepository
 {
+    public function all(): Courses;
     public function save(Course $course);
+    public function search(CourseId $id): ?Course;
 }

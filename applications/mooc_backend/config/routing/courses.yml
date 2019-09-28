@@ -1,0 +1,4 @@
+courses_get:
+  path:     /courses
+  defaults: { _controller: codely.mooc_backend.controller.courses.get }
+  methods:  [GET]

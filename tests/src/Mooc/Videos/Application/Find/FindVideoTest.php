@@ -10,6 +10,7 @@ use CodelyTv\Mooc\Videos\Domain\VideoNotFound;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoIdMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoMother;
 use CodelyTv\Test\Mooc\Videos\VideoModuleUnitTestCase;
+use CodelyTv\Test\Mooc\Courses\Domain\CourseMother;
 
 final class FindVideoTest extends VideoModuleUnitTestCase
 {
@@ -32,6 +33,7 @@ final class FindVideoTest extends VideoModuleUnitTestCase
 
         $id    = VideoIdMother::create($query->id());
         $video = VideoMother::withId($id);
+        $course = CourseMother::random();
 
         $response = VideoResponseMother::create(
             $video->id(),

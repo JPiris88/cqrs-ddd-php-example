@@ -4,6 +4,17 @@ Feature: Update a video title
   I want to update a video title
 
   Background:
+    Given  I send a POST request to "/course" with body:
+    """
+    {
+      "request_id": "170cfccd-869d-414b-a521-9cce9e0e67a2",
+      "id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00",
+      "title": "This is a title",
+      "description": "This is a description"
+    }
+    """
+    Then the response should be empty
+    And the response status code should be 201
     Given I send a POST request to "/video" with body:
     """
     {

@@ -3,6 +3,31 @@ Feature: Create video
   As a codelyver
   I want to create a video
 
+  Background:
+    Given  I send a POST request to "/course" with body:
+    """
+    {
+      "request_id": "170cfccd-869d-414b-a521-9cce9e0e67a2",
+      "id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00",
+      "title": "This is a title",
+      "description": "This is a description"
+    }
+    """
+    Then the response should be empty
+    And the response status code should be 201
+
+    Given  I send a POST request to "/course" with body:
+    """
+    {
+      "request_id": "b73de39c-2376-4bbd-b6b6-5ffba2515537",
+      "id": "48c2c2ea-bd93-4248-9f71-81ad37ad5647",
+      "title": "This is an another title",
+      "description": "This is an another description"
+    }
+    """
+    Then the response should be empty
+    And the response status code should be 201
+
   Scenario: Create an screencast video
     Given  I send a POST request to "/video" with body:
     """

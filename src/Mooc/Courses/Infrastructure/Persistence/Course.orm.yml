@@ -1,0 +1,18 @@
+CodelyTv\Mooc\Courses\Domain\Course:
+  type:  entity
+  table: courses
+
+  id:
+    id:
+      type: course_id
+      column: id
+      length: 36
+      class: CodelyTv\Mooc\Shared\Domain\Courses
+
+  embedded:
+    title:
+      class: CodelyTv\Mooc\Courses\Domain\CourseTitle
+      columnPrefix: false
+    description:
+      class: CodelyTv\Mooc\Courses\Domain\CourseDescription
+      columnPrefix: false

@@ -20,11 +20,11 @@ final class CourseNotFound extends DomainError
 
     public function errorCode(): string
     {
-        return 'Course_not_found';
+        return 'course_not_found';
     }
 
     protected function errorMessage(): string
     {
-        return sprintf('The Course <%s> has not been found', $this->id->value());
+        return sprintf('The course <%s> has not been found', $this->id->value());
     }
 }

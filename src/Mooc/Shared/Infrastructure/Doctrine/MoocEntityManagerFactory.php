@@ -17,6 +17,7 @@ final class MoocEntityManagerFactory
         'Videos\Domain'   => 'Videos/Infrastructure/Persistence',
         'Students\Domain' => 'Students/Infrastructure/Persistence',
         'Steps\Domain'    => 'Steps/Infrastructure/Persistence',
+        'Courses\Domain'    => 'Courses/Infrastructure/Persistence',
     ];
 
     public static function create(array $parameters, $rootPath, $onDemand, $schemaFile): EntityManagerInterface

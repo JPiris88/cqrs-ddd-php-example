@@ -4,3 +4,8 @@ services:
     class: CodelyTv\MoocBackend\Controller\Course\CoursePostController
     parent: codely.mooc_backend.controller
     public: true
+
+  codely.mooc_backend.controller.course.get:
+    class: CodelyTv\MoocBackend\Controller\Course\CourseGetController
+    parent: codely.mooc_backend.controller
+    public: true

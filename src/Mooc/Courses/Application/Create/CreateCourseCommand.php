@@ -13,9 +13,9 @@ final class CreateCourseCommand extends Command
     private $title;
     private $description;
 
-    public function __construct(Uuid $messageId, string $id, string $title, string $description)
+    public function __construct(Uuid $commandId, string $id, string $title, string $description)
     {
-        parent::__construct($messageId);
+        parent::__construct($commandId);
 
         $this->id          = $id;
         $this->title       = $title;

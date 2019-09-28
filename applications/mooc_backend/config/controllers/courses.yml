@@ -1,0 +1,7 @@
+services:
+
+  codely.mooc_backend.controller.courses.get:
+    class: CodelyTv\MoocBackend\Controller\Courses\CoursesGetController
+    parent: codely.mooc_backend.controller
+    public: true
+  

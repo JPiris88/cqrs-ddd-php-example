@@ -1,3 +1,10 @@
+CREATE TABLE `courses` (
+  `id` CHAR(36) NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE `videos` (
   `id` CHAR(36) NOT NULL,
   `type` VARCHAR(32) NOT NULL,
@@ -6,6 +13,7 @@ CREATE TABLE `videos` (
   `course_id` CHAR(36) NOT NULL,
   `created_on` timestamp NOT NULL,
   PRIMARY KEY (`id`)
+  CONSTRAINT `fk_videos__course_id` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `students` (

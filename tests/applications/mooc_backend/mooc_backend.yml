@@ -16,6 +16,18 @@ mooc_backend:
         - CodelyTv\Test\Shared\Infrastructure\Behat\ApiFeatureContext
         - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiRequestContext
         - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiResponseContext
+    course:
+      paths: [ tests/applications/mooc_backend/features/course ]
+      contexts:
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiFeatureContext
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiRequestContext
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiResponseContext
+    courses:
+      paths: [ tests/applications/mooc_backend/features/courses ]
+      contexts:
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiFeatureContext
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiRequestContext
+        - CodelyTv\Test\Shared\Infrastructure\Behat\ApiContext\ApiResponseContext
     video:
       paths: [ tests/applications/mooc_backend/features/video ]
       contexts:

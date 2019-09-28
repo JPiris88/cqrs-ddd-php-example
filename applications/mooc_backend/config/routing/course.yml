@@ -1,0 +1,9 @@
+course_post:
+  path:     /course
+  defaults: { _controller: codely.mooc_backend.controller.course.post }
+  methods:  [POST]
+
+course_get:
+  path:     /course/{id}
+  defaults: { _controller: codely.mooc_backend.controller.course.get }
+  methods:  [GET]
